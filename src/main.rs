@@ -3,17 +3,17 @@ use std::{fs, path::Path, process::exit};
 const ALPHABET:&str = " ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 const TARGET: &str = "a1525fd30074da00e777a55e07107910";
-const GUESS: &str = "FIND US ALONE";
+const GUESS: &str = "FIND US ALIVE";
 
 const NUM_WORDS: usize = 3;
-const WORDS:[&str; NUM_WORDS] = ["FIND", "US", "ALONE"];
+const WORDS:[&str; NUM_WORDS] = ["FIND", "US", "ALIVE"];
 
 fn main() {
     let mut guess: String = GUESS.to_string();
     mess_with_chars(&mut guess, 2, &check_correct);
 
     let dict = read_lines_uppercase("words.txt");
-    substitute_words(&dict, 2, WORDS);
+    substitute_words(&dict, 1, WORDS);
 }
 
 fn check_correct(input: &String) {
